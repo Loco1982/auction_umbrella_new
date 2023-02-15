@@ -16,6 +16,9 @@ defmodule AuctionUmbrellaNew.MixProject do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    []
+    [
+      {:ecto_sql, "~> 3.9.2"},
+      {:postgrex, "~> 0.16.5"}
+    ]
   end
 end
