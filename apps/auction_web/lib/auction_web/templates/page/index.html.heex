@@ -1,0 +1,12 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Loco's app" %></h1>
+  <p>Learning Phoenix and Elixir one step at the time</p>
+</section>
+
+<ul>
+  <%= for item <- @items do %>
+    <li>
+      <strong><%= item.title %>:</strong> <%= item.description%>
+    </li>
+  <% end %>
+</ul>
