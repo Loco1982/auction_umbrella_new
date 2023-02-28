@@ -12,12 +12,21 @@ import Config
 config :auction_web,
   generators: [context_app: false]
 
+config :auction, ecto_repos: [Auction.Repo]
+
 # Configures the endpoint
 config :auction_web, AuctionWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: AuctionWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: AuctionWeb.PubSub,
   live_view: [signing_salt: "kTTAc9Xd"]
+
+config :auction, Auction.Repo,
+  database: "auction",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  port: "5432"
 
 # Configure esbuild (the version is required)
 config :esbuild,
