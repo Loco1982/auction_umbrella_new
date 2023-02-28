@@ -11,7 +11,7 @@ defmodule AuctionWeb.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers:  Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -24,7 +24,7 @@ defmodule AuctionWeb.MixProject do
   def application do
     [
       mod: {AuctionWeb.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ecto, :ecto_sql]
     ]
   end
 
@@ -49,7 +49,8 @@ defmodule AuctionWeb.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:auction, in_umbrella: true}
+      {:auction, in_umbrella: true},
+      {:phoenix_ecto, "~> 4.0"}
     ]
   end
 
